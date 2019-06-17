@@ -46,7 +46,8 @@ function newtonIteration(n, x0) {
         }
     }
  
-//uses pseudorandomg "guess and check" method
+	function guessPrimes() {
+	//uses pseudorandom "guess and check" method
     var  upb = 999999999;
 	randomTestNumber = Math.random() * (999999999 - 100000000) + 100000000;
     var tm = Date.now();
@@ -56,3 +57,4 @@ function newtonIteration(n, x0) {
         }
     }
     console.log(`... Took: ${Date.now()-tm} ms`);
+	}
