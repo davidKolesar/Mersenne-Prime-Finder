@@ -1,3 +1,17 @@
+	//uses pseudorandom "guess and check" method 
+	function guessPrimes() {
+	console.log("Seeking primes");
+    var  upperBound = 5000;
+	randomTestNumber = Math.random() * (5000 - 1) + 1;
+    var tm = Date.now();
+    for (var randomTestNumber = 3n; randomTestNumber <= upperBound; randomTestNumber += 2n){
+        if (isPrime(randomTestNumber) && isMersennePrime(randomTestNumber)) {
+            console.log("M" + randomTestNumber);
+        }
+    }
+    console.log(`... Took: ${Date.now()-tm} ms`);
+	}
+
 //sqrt for BigInt
 function newtonIteration(n, x0) {
         const x1 = ((n / x0) + x0) >> 1n;
@@ -45,16 +59,3 @@ function newtonIteration(n, x0) {
             return s === 0n;
         }
     }
- 
-	function guessPrimes() {
-	//uses pseudorandom "guess and check" method
-    var  upb = 999999999;
-	randomTestNumber = Math.random() * (999999999 - 100000000) + 100000000;
-    var tm = Date.now();
-    for (var randomTestNumber = 3n; randomTestNumber <= upb; randomTestNumber += 2n){
-        if (isPrime(randomTestNumber) && isMersennePrime(randomTestNumber)) {
-            console.log("M" + randomTestNumber);
-        }
-    }
-    console.log(`... Took: ${Date.now()-tm} ms`);
-	}
